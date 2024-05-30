@@ -200,7 +200,7 @@ void appdet()
         printf("\n\t\t\tEnter DOB(dd/mm/yyyy): ");
         scanf("%s",&dob);
         printf("\n\t\t\tEnter Address: ");
-        scanf("%s",&address);
+        scanf(" %[^\n]", address);
         printf("\n\t\t\tEnter Mobile Number: ");
         scanf("%s",&mbno);
         FILE *file1 = fopen("stu_details.csv", "a");
@@ -210,7 +210,7 @@ void appdet()
             exit(1);
         }
         printf("\n\n\t\tStudent Details Entered Sucessfully\n");
-        fprintf(file1, "%s,%s,%d,%s,%s,%s\n", username, password,age,dob,address,mbno);
+        fprintf(file1, "%s,%d,%s,%s,%s\n", username,age,dob,address,mbno);
 
         fclose(file1);
     }
