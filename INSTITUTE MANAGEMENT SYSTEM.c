@@ -134,6 +134,7 @@ void main()
             printf("\n\n\t\t\t\t\t\tThank You");
         }
 }
+//Take the Password and Print *
 void takepassword(char password[20])
 {
     int i=0;
@@ -163,7 +164,7 @@ void takepassword(char password[20])
     }
     printf("\n");
 }
-
+//Append the Students Details stu_details.csv
 void appdet()
 
 {
@@ -222,7 +223,7 @@ void appdet()
 
 }
 
-
+//Sign up to Create Account
 void signup()
 {
     char password[100];
@@ -247,7 +248,7 @@ void signup()
     appdet();
 
 }
-
+//Login to Select the Course
 void login()
 {
     char file_username[100], file_password[100];
@@ -331,7 +332,7 @@ void login()
     }
 }
 
-
+// To view Student Database Only for Admin
 void stu_db()
 {
 
@@ -352,7 +353,28 @@ void stu_db()
     }
 }
 
+// To view Student Course Detail Database Only for Admin
+void stu_co_db(){
 
+    FILE *file = fopen("course_details.csv", "r");
+    if (file == NULL)
+    {
+        printf("Could not open file %s for reading.\n", "reserved.csv");
+    }
+    else
+    {
+        printf("\n\n\tStudent Database :\n\n");
+        char line[256];
+        while (fgets(line, sizeof(line), file))
+        {
+            printf("\t\t%s", line);
+        }
+        fclose(file);
+    }
+}
+
+
+//Loading
 void loading()
 {
 char a[15]={'(','L','o','a','d','i','n','g','.','.','.',')'};
@@ -367,7 +389,7 @@ char a[15]={'(','L','o','a','d','i','n','g','.','.','.',')'};
     }
 }
 
-
+//Payment Process
 void payment1()
 {
     int pay;
@@ -384,7 +406,7 @@ void payment1()
     }
 
 }
-
+//Printing the Details for PG diploma in Embedded Systems
 void pg_dip()
 {
 
@@ -459,7 +481,7 @@ void pg_dip()
     detl();
 }
 
-
+//Printing the Details for Internet Of Things
 void iot()
 {
     printf("\n\n\t\tBest wishes for choosing Internet Of Things *** %s ***\n\n",username);
@@ -529,6 +551,8 @@ void iot()
     detl();
 
 }
+
+//Printing the Details for Artificial Intelligence and Machine Learnin
 void ai(){
 
     printf("\n\n\t\tBest wishes for choosing Artificial Intelligence and Machine Learning *** %s ***\n\n",username);
@@ -599,25 +623,7 @@ void ai(){
     detl();
 }
 
-
-void stu_co_db(){
-
-    FILE *file = fopen("course_details.csv", "r");
-    if (file == NULL)
-    {
-        printf("Could not open file %s for reading.\n", "reserved.csv");
-    }
-    else
-    {
-        printf("\n\n\tStudent Database :\n\n");
-        char line[256];
-        while (fgets(line, sizeof(line), file))
-        {
-            printf("\t\t%s", line);
-        }
-        fclose(file);
-    }
-}
+//Contact Details
 void detl()
 {
     printf("\n\n\n\n\t\t\t\t\t***THANK YOU FOR VISITING OUR PAGE***\n\nFor more information,contact below: \n");
